@@ -128,3 +128,14 @@ This alert showed that elevated privileges were assigned to the authenticated se
 This alert confirmed that the authenticated session ended normally after the SMB authentication was completed.
 
 ![Rule 60137 Windows User Logoff](screenshots/rule-60137.png)
+
+
+## Analysis / Findings
+
+The SMB authentication simulation demonstrated that Wazuh successfully detected and correlated the key events generated during a remote login.
+
+The successful remote logon alert identified the authentication performed using the **labuser** account, while the additional alerts confirmed that administrative privileges were assigned to the session and that the user later logged off. Together, these alerts provided a clear timeline of the activity.
+
+Although this authentication was performed using valid credentials in a controlled lab environment, the same behavior is commonly associated with lateral movement during real-world attacks. If an attacker obtains legitimate credentials, SMB is often used to access additional systems within a network.
+
+From a SOC analyst's perspective, this activity would warrant further investigation to determine whether the authentication was expected or part of unauthorized movement between systems. Correlating the source host, destination host, user account, and authentication time would help determine whether the activity was legitimate or malicious.
