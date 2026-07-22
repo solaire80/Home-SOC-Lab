@@ -139,3 +139,16 @@ The successful remote logon alert identified the authentication performed using 
 Although this authentication was performed using valid credentials in a controlled lab environment, the same behavior is commonly associated with lateral movement during real-world attacks. If an attacker obtains legitimate credentials, SMB is often used to access additional systems within a network.
 
 From a SOC analyst's perspective, this activity would warrant further investigation to determine whether the authentication was expected or part of unauthorized movement between systems. Correlating the source host, destination host, user account, and authentication time would help determine whether the activity was legitimate or malicious.
+
+## MITRE ATT&CK Mapping
+
+| Tactic | Technique | ID |
+|--------|-----------|----|
+| Defense Evasion | Valid Accounts | T1078 |
+| Lateral Movement | SMB/Windows Admin Shares | T1021.002 |
+
+## Conclusion
+
+This lab demonstrated how Wazuh detects and correlates Windows Security Events generated during a successful SMB authentication. By simulating a remote login from a Kali Linux attacker to a Windows 10 endpoint, I was able to observe how Wazuh identified the authentication, the assignment of administrative privileges, and the user logoff.
+
+Although the activity was performed in a controlled lab environment using valid credentials, it reflects techniques commonly observed during lateral movement in real-world attacks. This exercise improved my understanding of Windows authentication events, Wazuh alert correlation, and the investigation process a SOC analyst would follow when reviewing remote logon activity.
