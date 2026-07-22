@@ -69,7 +69,7 @@ set RHOSTS 192.168.56.107
 set SMBUser labuser
 set SMBPass Lab123!
 
-exploit
+run
 ```
 
 After the module was executed, Metasploit successfully authenticated to the Windows endpoint using the supplied credentials. This generated Windows Security Events that were later analyzed using Wazuh.
