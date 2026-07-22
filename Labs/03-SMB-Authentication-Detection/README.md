@@ -73,3 +73,20 @@ run
 ```
 
 After the module was executed, Metasploit successfully authenticated to the Windows endpoint using the supplied credentials. This generated Windows Security Events that were later analyzed using Wazuh.
+
+## Detection Logic
+
+After executing the SMB authentication attack, I reviewed the generated alerts in the Wazuh **Threat Hunting** module to verify that the activity had been detected.
+
+The Windows endpoint generated several security events that were processed by the Wazuh Manager. The authentication sequence produced multiple alerts, allowing the login session to be reconstructed.
+
+The following alerts were observed during the investigation:
+
+| Rule ID | Alert | Level |
+|---------:|-------|------:|
+| 92657 | Successful Remote Logon Detected (NTLM Authentication) | 6 |
+| 67028 | Special privileges assigned to new logon | 3 |
+| 60137 | Windows User Logoff | 3 |
+
+These alerts confirmed that Wazuh successfully detected the remote SMB authentication performed using the **labuser** account. The correlated alerts also showed that administrative privileges were assigned to the session and that the logon sequence completed normally before the user logged off.
+
