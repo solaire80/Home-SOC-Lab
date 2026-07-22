@@ -29,12 +29,6 @@ The objective of this lab was to deploy a single-node Wazuh SIEM server on Ubunt
 | ------------ | -------------- |
 | Wazuh Server | 192.168.56.108 |
 
-Kali Linux
-      \
-       \
-Windows Endpoint ----> Wazuh Server
-        Wazuh Agent
-
 ---
 
 ## Installation Steps
