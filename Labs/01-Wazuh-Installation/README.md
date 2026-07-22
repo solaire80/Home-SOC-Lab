@@ -28,6 +28,8 @@ The objective of this lab was to deploy a single-node Wazuh SIEM server on Ubunt
 | Device       | IP Address     |
 | ------------ | -------------- |
 | Wazuh Server | 192.168.56.108 |
+| Windows 10   | 192.168.56.107 |
+ 
 
 ---
 
