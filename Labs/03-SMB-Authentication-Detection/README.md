@@ -102,7 +102,7 @@ The Metasploit `auxiliary/scanner/smb/smb_login` module successfully authenticat
 
 The Threat Hunting module displayed the alerts generated during the SMB authentication. Wazuh detected the successful remote logon, the assignment of special privileges, and the subsequent user logoff.
 
-![Wazuh Threat Hunting Results](screenshots/threat-hunting.png)
+![Wazuh Threat Hunting Results](screenshots/Threat-Hunting.png)
 
 
 ---
