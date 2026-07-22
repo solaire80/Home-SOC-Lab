@@ -75,6 +75,10 @@ Sysmon events spanning multiple types — including Event ID 1 (Process Creation
 To confirm the events were reaching Wazuh, the Wazuh dashboard's **Threat Hunting** module was checked, filtering by the Windows 10 agent. Sysmon-sourced events appeared alongside standard Windows Security events, confirming successful log forwarding.
 
 ---
+## Result
+
+Sysmon was successfully installed on the Windows endpoint and configured using the SwiftOnSecurity ruleset. After updating the Wazuh agent configuration, Sysmon Operational logs were successfully forwarded to the Wazuh Manager and became available for threat hunting and future detection exercises.
+
 
 ### Figure 1 – Sysmon Installed and Running
 
