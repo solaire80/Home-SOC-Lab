@@ -71,8 +71,7 @@ Restart-Service -Name WazuhSvc
 To confirm Sysmon was generating events locally, Windows Event Viewer was checked under:
 Applications and Services Logs → Microsoft → Windows → Sysmon → Operational
 
-Sysmon events (such as Event ID 1 – Process Creation) were visible, confirming the service was actively logging.
-
+Sysmon events spanning multiple types — including Event ID 1 (Process Creation), Event ID 13 (Registry Value Set), and Event ID 22 (DNS Query) — were visible, confirming the service was actively logging a broad range of activity.
 To confirm the events were reaching Wazuh, the Wazuh dashboard's **Threat Hunting** module was checked, filtering by the Windows 10 agent. Sysmon-sourced events appeared alongside standard Windows Security events, confirming successful log forwarding.
 
 ---
