@@ -79,6 +79,7 @@ To confirm the events were reaching Wazuh, the Wazuh dashboard's **Threat Huntin
 
 Sysmon was successfully installed on the Windows endpoint and configured using the SwiftOnSecurity ruleset. After updating the Wazuh agent configuration, Sysmon Operational logs were successfully forwarded to the Wazuh Manager and became available for threat hunting and future detection exercises.
 
+---
 
 ### Figure 1 – Sysmon Installed and Running
 
