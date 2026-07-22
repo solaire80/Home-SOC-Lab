@@ -57,15 +57,13 @@ impacket-psexec labuser:'lab123!'@192.168.56.107
 
 Impacket authenticated to the `ADMIN$` share, uploaded a temporary service binary (`hrlSwhIc.exe`), created and started a Windows service (`doSV`) to execute it, and returned an interactive SYSTEM-level shell:
 
----
-
+```
 [*] Found writable share ADMIN$
 [*] Uploading file hrlSwhIc.exe
-[*] Opening SVCManager...
-[*] Creating service doSV...
+[*] Opening SVCManager on 192.168.56.107.....
+[*] Creating service doSV on 192.168.56.107.....
 [*] Starting service doSV.....
-
----
+```
 
 From the resulting shell, running as `nt authority\system`, basic reconnaissance commands were executed to simulate post-exploitation activity:
 
@@ -77,9 +75,11 @@ ipconfig
 
 Upon exiting the session, Impacket automatically cleaned up after itself — stopping and removing the service, and deleting the uploaded binary:
 
-[] Stopping service doSV.....
-[] Removing service doSV.....
+```
+[*] Stopping service doSV.....
+[*] Removing service doSV.....
 [*] Removing file hrlSwhIc.exe.....
+```
 
 ---
 
