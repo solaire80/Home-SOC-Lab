@@ -90,3 +90,41 @@ The following alerts were observed during the investigation:
 
 These alerts confirmed that Wazuh successfully detected the remote SMB authentication performed using the **labuser** account. The correlated alerts also showed that administrative privileges were assigned to the session and that the logon sequence completed normally before the user logged off.
 
+### Figure 1 – Successful SMB Authentication Using Metasploit
+
+The Metasploit `auxiliary/scanner/smb/smb_login` module successfully authenticated to the Windows 10 endpoint using the **labuser** account. This confirmed that the credentials were valid and generated the authentication events required for the detection exercise.
+
+> *(screenshots/metasploit.png)*
+
+---
+
+### Figure 2 – Wazuh Threat Hunting Results
+
+The Threat Hunting module displayed the alerts generated during the SMB authentication. Wazuh detected the successful remote logon, the assignment of special privileges, and the subsequent user logoff.
+
+> *(screenshots/)*
+
+---
+
+### Figure 3 – Successful Remote Logon Alert (Rule ID: 92657)
+
+This alert identified the successful NTLM remote authentication performed by the **labuser** account and classified the activity as a successful remote logon.
+
+> *(screenshots/rule-92657)*
+
+---
+
+### Figure 4 – Special Privileges Assigned (Rule ID: 67028)
+
+This alert showed that elevated privileges were assigned to the authenticated session after the successful logon.
+
+> *(screenshots/rule-67028)*
+
+---
+
+### Figure 5 – Windows User Logoff (Rule ID: 60137)
+
+This alert confirmed that the authenticated session ended normally after the SMB authentication was completed.
+
+> *(screenshots/rule-60137)*
+
