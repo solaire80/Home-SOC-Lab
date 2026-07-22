@@ -88,14 +88,4 @@ Each lab includes:
 
 ---
 
-## 📌 Current Progress
-
-- ✅ Wazuh deployed
-- ✅ Windows endpoint enrolled
-- ✅ Sysmon configured
-- ✅ SMB authentication detection completed
-- 🚧 Building additional attack detection labs
-
----
-
 > This repository documents my journey of learning Security Operations, detection engineering, and threat hunting through practical, hands-on labs.
