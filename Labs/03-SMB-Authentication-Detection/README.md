@@ -45,3 +45,31 @@ From the Kali Linux virtual machine, the Metasploit Framework was used to perfor
 The objective was to determine whether Wazuh would successfully collect the generated Windows Security Events and alert on the remote authentication activity.
 
 Although the authentication used legitimate credentials, this technique is commonly observed during lateral movement when an attacker gains access to valid user accounts inside a network.
+
+## Attack Simulation / Setup
+
+The attack was performed from the Kali Linux virtual machine using the Metasploit Framework. Before launching the attack, a local administrator account named **labuser** was created on the Windows 10 endpoint. This account was used because Windows Microsoft accounts do not authenticate over SMB in the same way as local accounts, making a local account more suitable for this simulation.
+
+The Metasploit Framework was started and the SMB login scanner module was selected.
+
+**Metasploit Module**
+
+```text
+auxiliary/scanner/smb/smb_login
+```
+
+The following commands were used during the simulation:
+
+```bash
+msfconsole
+
+use auxiliary/scanner/smb/smb_login
+
+set RHOSTS 192.168.56.107
+set SMBUser labuser
+set SMBPass Lab123!
+
+exploit
+```
+
+After the module was executed, Metasploit successfully authenticated to the Windows endpoint using the supplied credentials. This generated Windows Security Events that were later analyzed using Wazuh.
