@@ -6,7 +6,7 @@ The goal of this project is to strengthen my blue team skills by building a dete
 
 Each lab folder contains a full write-up simulating an attack technique and documenting the investigation process a SOC analyst would follow.
 
-👉 Start here:
+👉 Start here: [Lab 01 - Wazuh Installation](Labs/01-Wazuh-Installation)
 
 ---
 
@@ -22,27 +22,30 @@ Each lab folder contains a full write-up simulating an attack technique and docu
 
 ## 🖥️ Lab Architecture
 
-Kali Linux
-          (192.168.56.103)
-                 │
-      Attack Simulation
-                 │
-                 ▼
-    Windows 10 Endpoint
-      (192.168.56.107)
-                 │
-         Wazuh Agent
-                 │
-                 ▼
-     Wazuh Server (Ubuntu)
-      (192.168.56.108)
+```
+                 Kali Linux
+              (192.168.56.103)
+                     │
+          Attack Simulation
+                     │
+                     ▼
+        Windows 10 Endpoint
+          (192.168.56.107)
+                     │
+             Wazuh Agent
+                     │
+                     ▼
+         Wazuh Server (Ubuntu)
+          (192.168.56.108)
+```
+---
 
-      ## Technologies Used
+ ## Technologies Used
 
 | Technology | Version |
 |------------|---------|
 | Wazuh | 4.12.0 |
-| Ubuntu Server | 22.05.5 LTS |
+| Ubuntu Server | 22.04.5 LTS |
 | Windows 10 Pro | 22H2 |
 | Kali Linux | 2025.2 |
 | Sysmon | 15.15 |
