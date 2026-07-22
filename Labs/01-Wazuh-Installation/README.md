@@ -72,15 +72,9 @@ All three services reported an **active (running)** status, confirming a success
 
 The installation completed successfully, and all core Wazuh components were operational. The dashboard was accessible over HTTPS, and the server was ready for endpoint enrollment in the following lab.
 
-### Figure 1 – Wazuh Dashboard Login Page
-
-The Wazuh login page was successfully reached over HTTPS at `192.168.56.108`, confirming the dashboard component was installed and reachable from the network.
-
-![Wazuh Dashboard Login](screenshots/wazuh-dashboard-login.png)
-
 ---
 
-### Figure 2 – Wazuh Dashboard Overview
+### Figure 1 – Wazuh Dashboard Overview
 
 After logging in, the Wazuh dashboard overview confirmed an active agent connection and displayed alert summaries by severity, verifying the manager, indexer, and dashboard were fully integrated and processing events.
 
@@ -88,7 +82,7 @@ After logging in, the Wazuh dashboard overview confirmed an active agent connect
 
 ---
 
-### Figure 3 – Wazuh Manager Service Status
+### Figure 2 – Wazuh Manager Service Status
 
 The `systemctl status wazuh-manager` command confirmed the manager service was active and running, with core processes such as wazuh-analysisd, wazuh-remoted, and wazuh-syscheckd successfully started.
 
@@ -96,7 +90,7 @@ The `systemctl status wazuh-manager` command confirmed the manager service was a
 
 ---
 
-### Figure 4 – Wazuh Indexer Service Status
+### Figure 3 – Wazuh Indexer Service Status
 
 The `systemctl status wazuh-indexer` command confirmed the indexer service was active and running, responsible for storing and indexing the security events collected by the manager.
 
@@ -104,7 +98,7 @@ The `systemctl status wazuh-indexer` command confirmed the indexer service was a
 
 ---
 
-### Figure 5 – Wazuh Dashboard Service Status
+### Figure 4 – Wazuh Dashboard Service Status
 
 The `systemctl status wazuh-dashboard` command confirmed the dashboard service was active and running, providing the web interface used to visualize and investigate security events.
 
