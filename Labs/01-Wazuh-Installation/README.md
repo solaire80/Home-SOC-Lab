@@ -17,8 +17,8 @@ The objective of this lab was to deploy a single-node Wazuh SIEM server on Ubunt
 
 | Component    | Description        |
 | ------------ | ------------------ |
-| SIEM         | Wazuh               |
-| Wazuh Server | Ubuntu Server        |
+| SIEM         | Wazuh 4.12.0       |
+| Wazuh Server | Ubuntu Server  24.04 LTS |
 | Hypervisor   | Oracle VirtualBox   |
 
 ---
@@ -28,6 +28,12 @@ The objective of this lab was to deploy a single-node Wazuh SIEM server on Ubunt
 | Device       | IP Address     |
 | ------------ | -------------- |
 | Wazuh Server | 192.168.56.108 |
+
+Kali Linux
+      \
+       \
+Windows Endpoint ----> Wazuh Server
+        Wazuh Agent
 
 ---
 
@@ -46,7 +52,7 @@ Once the installation completed, the script generated admin credentials for acce
 The Wazuh dashboard was then accessed from a browser at:
 https://192.168.56.108
 
-The default self-signed certificate warning was accepted to proceed to the login page, and the generated admin credentials were used to log in successfully.
+Since the installation uses a self-signed certificate by default, the browser displayed a security warning. This warning was expected and was bypassed to access the Wazuh dashboard.
 
 ## Verification
 
@@ -61,6 +67,10 @@ systemctl status wazuh-dashboard
 All three services reported an **active (running)** status, confirming a successful installation.
 
 ---
+
+## Result
+
+The installation completed successfully, and all core Wazuh components were operational. The dashboard was accessible over HTTPS, and the server was ready for endpoint enrollment in the following lab.
 
 ### Figure 1 – Wazuh Dashboard Login Page
 
