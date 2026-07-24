@@ -61,7 +61,7 @@ Each lab folder contains a full write-up simulating an attack technique and docu
 | 02 | [Sysmon Integration](Labs/02-Sysmon-Integration) | ✅ |
 | 03 | [SMB Authentication Detection](Labs/03-SMB-Authentication-Detection) | ✅ |
 | 04 | [PsExec Execution Detection](Labs/04-PsExec-Execution) | ✅ |
-| 05 | [Brute Force Detection and Active Response](Lab/05-Brute-ForceDetection-and-Active-Response) | ✅ |
+| 05 | [Brute Force Detection & Active Response](Labs/05-Brute-Force-Detection) | ✅ |
 
 ---
 
