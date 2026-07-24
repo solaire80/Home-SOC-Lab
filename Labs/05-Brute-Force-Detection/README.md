@@ -183,6 +183,20 @@ Both available response scripts (`netsh` and `route-null`) are IP-based, and sin
 
 ---
 
+Attack Timeline
+
+1. SMB brute force begins
+2. Multiple Event ID 4625 generated
+3. Rule 60122 triggered
+4. Windows account lockout
+5. Rule 60204 correlation
+6. Active Response attempted
+7. Missing IP field identified
+8. RDP retest performed
+9. Same limitation confirmed
+
+---
+
 ## Analysis / Findings
 
 Wazuh's detection capability performed exactly as expected across both protocols tested. Rule 60204 fired correctly and consistently, correlating individual failed logons into a single, actionable high-severity alert without any custom rule authoring — confirming the value of the logging pipeline established in earlier labs.
